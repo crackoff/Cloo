@@ -425,7 +425,10 @@ namespace Cloo
             ComputeException.ThrowOnError(error);
 
             if (eventsWritable)
+            {
+                Flush();
                 events.Add(new ComputeEvent(newEventHandle[0], this));
+            }
         }
 
         /// <summary>
